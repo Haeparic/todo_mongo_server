@@ -22,7 +22,7 @@ app.use(cors(corsOptions));
 // 포트번호
 const port = 5000;
 // 고정된 Path 경로를 설정한다
-app.use(express.static(path.join(__dirname, ".build/")));
+app.use(express.static(path.join(__dirname, "./build/")));
 // 요청이 들어오면 json 사용 및 url 인코딩 진행해줌
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -50,9 +50,9 @@ app.listen(port, () => {
 // 응답 : Response
 app.get("/", (req, res) => {
   // 파일을 보여줌
-  res.sendFile(path.join(__dirname, "../client/build/index.html"));
+  res.sendFile(path.join(__dirname, "./build/index.html"));
 });
 // 주소가 없는 경우에 강제 URL 이동
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../client/build/index.html"));
+  res.sendFile(path.join(__dirname, "./build/index.html"));
 });
