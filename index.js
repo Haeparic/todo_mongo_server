@@ -8,16 +8,17 @@ const mongoose = require("mongoose");
 
 var cors = require("cors");
 
+// 개발 인증관련
+const config = require("./config/key.js");
+// express 인스턴스 생성
+const app = express();
+
 let corsOptions = {
   origin: "*", // 출처 허용 옵션
   credential: true, // 사용자 인증이 필요한 리소스(쿠키 등) 접근
 };
 app.use(cors(corsOptions));
 
-// 개발 인증관련
-const config = require("./config/key.js");
-// express 인스턴스 생성
-const app = express();
 // 포트번호
 const port = 5000;
 // 고정된 Path 경로를 설정한다
